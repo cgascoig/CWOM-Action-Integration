@@ -9,8 +9,9 @@ To use this:
 
 1. Clone this repository: `git clone https://github.com/cgascoig/CWOM-Action-Integration`
 2. Change into the directory: `cd CWOM-Action-Integration`
-3. Build the Docker image: `docker build -t cwom-appd .`
-4. Run the Docker image: `docker run --rm -p 3000:3000 cwom-appd`
+3. Edit the `config.json` to match your environment
+4. Build the Docker image: `docker build -t cwom-appd .`
+5. Run the Docker image: `docker run --rm -p 3000:3000 cwom-appd`
 
 
 
