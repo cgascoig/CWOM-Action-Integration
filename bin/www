@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 var configManager = require('../src/ConfigManager');
 var app = require('../app');
-var server = require('http').Server(app);
+// var server = require('http').Server(app);
+const https = require('https');
+const fs = require('fs');
+
 
 app.set('port', process.env.PORT || configManager.getLocalPort());
 
@@ -20,5 +23,13 @@ try {
 var log4js = require('log4js');
 log4js.configure('./log4js.json');
 var log = log4js.getLogger("startup");
+
+var key = fs.readFileSync('/selfsigned.key');
+var cert = fs.readFileSync('/selfsigned.crt');
+var options = {
+  key: key,
+  cert: cert
+};
+var server = https.createServer(options, app);
 
 server.listen(configManager.getLocalPort());
