@@ -1,3 +1,19 @@
+# This fork
+
+This fork differs from the original (https://github.com/Appdynamics/CWOM-Action-Integration) in that:
+
+* It serves HTTPS instead of HTTP
+* Has a Dockerfile that builds an image with an auto-generated self-signed certificate
+
+To use this:
+
+1. Clone this repository: `git clone https://github.com/cgascoig/CWOM-Action-Integration`
+2. Change into the directory: `cd CWOM-Action-Integration`
+3. Build the Docker image: `docker build -t cwom-appd .`
+4. Run the Docker image: `docker run --rm -p 3000:3000 cwom-appd`
+
+
+
 
 # CWOM Action List
 This is the code for the CWOM demo shown at IMPACT.  This is a custom web app built specifically to highlight CWOM and AppDynamics working together.  As such, this is meant for demo purposes and the art of the possible. The demo is custom code and not an officially supported product of CWOM or Appdynamics. 
